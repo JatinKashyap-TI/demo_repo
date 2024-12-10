@@ -1,0 +1,29 @@
+<odoo>
+
+    <record id="event_form_view" model="ir.ui.view">
+        <field name="name">calendar.event.form.inherit</field>
+        <field name="model">calendar.event</field>
+        <field name="inherit_id" ref="calendar.view_calendar_event_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//form" position="inside">
+            </xpath>
+        </field>
+    </record>
+    <record id="event_tree_view" model="ir.ui.view">
+        <field name="name">calendar.event.tree.inherit</field>
+        <field name="model">calendar.event</field>
+        <field name="inherit_id" ref="calendar.view_calendar_event_tree"/>
+        <field name="arch" type="xml">
+            <xpath expr="//tree" position="inside">
+            </xpath>
+        </field>
+    </record>
+
+    <record id="event_view_action" model="ir.actions.act_window">
+        <field name="name">Event</field>
+        <field name="res_model">calendar.event</field>
+        <field name="view_mode">tree,form</field>
+        <field name="view_id" ref="event_tree_view"/> 
+    </record>
+
+</odoo>

@@ -1,0 +1,12 @@
+<odoo>
+<menuitem id="office_menuitem"  name="Office Management"/>
+<menuitem id="office_employee" name="Employees" parent="office_menuitem" action="employee_view_action"/>
+<menuitem id="office_department" name="Department" parent="office_menuitem" action="department_view_action"/>
+<menuitem id="office_inventory" name="Inventory" parent="office_menuitem" action="inventory_view_action"/>
+<menuitem id="office_events" name="Events" parent="office_menuitem" action="event_view_action"/>
+<menuitem id="office_attendance" name="Attendance" parent="office_menuitem" action="view_action_attendance"/>
+<menuitem id="office_referal" name="Referal" parent="office_menuitem" action="referal_view_action"/>
+<menuitem id="office_payment" name="Payment" parent="office_menuitem" action="payment_view_action"/>
+<menuitem id="office_settings" name="Settings" parent="office_menuitem" action="settings_action"  sequence='10' />
+
+</odoo>

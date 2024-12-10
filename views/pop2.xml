@@ -1,0 +1,33 @@
+<odoo>
+
+
+    <record id="pop_two_form_view" model="ir.ui.view">
+        <field name="name">inv.conf.form</field>
+        <field name="model">inv.conf</field>
+        <field name="arch" type="xml">
+
+            <form string="conf inv">
+
+                <group>
+
+                    <field name="prod"></field>
+                    <field name="emp"></field>
+
+                </group>
+
+
+            <footer>
+
+                <button type="object" string="save" name="confirm_inventory"></button>
+                <button type="object" string="cancel" name="cancel_inventory"></button>
+
+            </footer>
+            </form>
+
+        </field>
+
+    </record>
+
+
+
+</odoo>

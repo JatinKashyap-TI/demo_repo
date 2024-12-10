@@ -1,0 +1,41 @@
+<odoo>
+    <record id="template_report" model="ir.actions.report">
+        <field name="name">Employee</field>
+        <field name="model">hr.employee</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">office_management.report_employee_document</field>
+        <field name="report_file">office_management.report_employee_document</field>
+    </record>
+ 
+    <odoo>
+    <template id="report_employee_document">
+        <t t-call="web.external_layout">
+            <div class="page">
+                <h2 style="text-align: center;">Employee Report</h2>
+                <table class="table table-bordered">
+                    <tr>
+                        <th>Name</th>
+                        <!-- <td><span t-field="doc.name"/></td> -->
+                    </tr>
+                    <tr>
+                        <th>Attendance</th>
+                        <td><span t-field="doc.attend"/></td>
+                    </tr>
+                    <tr>
+                        <th>Salary</th>
+                        <td><span t-field="doc.salary"/></td>
+                    </tr>
+                    <tr>
+                        <th>Expected Appraisal</th>
+                        <td><span t-field="doc.expected_appraisal"/></td>
+                    </tr>
+                </table>
+            </div>
+        </t>
+    </template>
+</odoo>
+
+</odoo> 
+
+
+

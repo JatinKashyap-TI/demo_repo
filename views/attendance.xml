@@ -1,0 +1,54 @@
+<odoo>
+<record id="view_attendance_form" model="ir.ui.view">
+
+<field name="name">hr.attendance.form.inherit</field>
+<field name="model">hr.attendance</field>
+<field name="inherit_id" ref="hr_attendance.hr_attendance_view_form"></field>
+<field name="arch" type="xml">
+
+<xpath expr="//field[@name='employee_id']" position="after">
+<field name="chk_in" ></field>
+<field name="chk_out"></field>
+</xpath>
+
+<xpath expr="//field[@name='check_in']" position ="attributes">
+<attribute name="readonly">1</attribute>
+<attribute name="string">Check In Time</attribute>
+<!-- <attribute name="compute">_compute_chkin</attribute>        -->
+</xpath>
+<xpath expr="//field[@name='check_out']" position ="attributes">
+<attribute name="readonly">1</attribute>
+<attribute name="string">Check out Time</attribute>
+<!-- <attribute name="compute">_compute_chkout</attribute> -->
+
+</xpath>
+
+</field>
+
+</record>
+
+
+<record id="view_attendance_tree" model="ir.ui.view">
+<field name="name">hr.attendance.tree.inherit</field>
+<field name="model">hr.attendance</field>
+<field name="inherit_id" ref="hr_attendance.view_attendance_tree"></field>
+<field name="arch" type="xml">
+
+<xpath expr="//tree" position="inside">
+
+</xpath>
+
+</field>
+
+</record>
+
+<record id="view_action_attendance" model="ir.actions.act_window">
+<field name="name">Attendance</field>
+<field name="res_model">hr.attendance</field>
+<field name="view_mode">form,tree</field>
+<field name="view_id" ref="view_attendance_tree"></field>
+
+
+</record>
+
+</odoo>

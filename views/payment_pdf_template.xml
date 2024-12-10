@@ -1,0 +1,66 @@
+<odoo>
+    <record id="template_report" model="ir.actions.report">
+        <field name="name">Payment</field>
+        <field name="model">account.payment</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">office_management.template_report_id_new</field>
+        <field name="report_file">office_management.template_report_id_new</field>
+    </record>
+
+    <template id="template_report_id_new">
+        <t t-foreach="docs" t-as="doc">
+            <t t-call="web.html_container">
+            <t t-call="web.external_layout">
+                <div class="page">
+                    <main>
+                        <h2 class="text-center " style="color:black;" >Payment Report</h2>
+                        <h2 class="text-center " style="color:black;" >
+                        <t t-out="doc.name" />
+                        </h2>
+
+                        <table style="width: 100%; border-collapse: collapse; margin-top: 20px;">
+                            <tbody>
+                                <tr>
+                                    <td style="padding: 8px; font-weight: bold; width: 40%; border: 1px solid #000;">
+                                        Employee Name
+                                    </td>
+                                    <td style="padding: 8px; width: 60%; border: 1px solid #000;">
+                                        <t t-esc="doc.employee.name"/>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td style="padding: 8px; font-weight: bold; border: 1px solid #000;">
+                                        Amount
+                                    </td>
+                                    <td style="padding: 8px; border: 1px solid #000;">
+                                        <t t-esc="doc.amount"/>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td style="padding: 8px; font-weight: bold; border: 1px solid #000;">
+                                        Date
+                                    </td>
+                                    <td style="padding: 8px; border: 1px solid #000;">
+                                        <t t-esc="doc.date"/>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td style="padding: 8px; font-weight: bold; border: 1px solid #000;">
+                                        Department
+                                    </td>
+                                    <td style="padding: 8px; border: 1px solid #000;">
+                                        <t t-esc="doc.employee.department_id.name"/>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </main>
+                </div>
+            </t>
+        </t>
+        </t>
+    </template>
+</odoo>
